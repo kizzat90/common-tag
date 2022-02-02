@@ -40,10 +40,9 @@ public class ClickTrackerApplication {
 				}
 			}
 
-			StringBuilder stringBuilder = new StringBuilder();
-			Map<Map<String, String>, List<String>> commonTag = findCommonTag(recipientTagMap);
-
 			// Construct output
+			Map<Map<String, String>, List<String>> commonTag = findCommonTag(recipientTagMap);
+			StringBuilder stringBuilder = new StringBuilder();
 			for (Map.Entry<Map<String, String>, List<String>> common : commonTag.entrySet()) {
 				common.getKey().forEach((key, value) -> stringBuilder.append(key).append(", ").append(value).append(" - "));
 				stringBuilder.append(common.getValue()).append(" | ");
